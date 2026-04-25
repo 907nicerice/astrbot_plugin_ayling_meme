@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://example.com/001.gif",
+    "tags": ["shy", "tease", "soft"],
+    "weight": 1
+  },
+  {
+    "url": "https://example.com/002.gif",
+    "tags": ["speechless", "tease"],
+    "weight": 2
+  },
+  {
+    "url": "https://example.com/003.png",
+    "tags": ["sleepy", "care"],
+    "weight": 1
+  }
+]
