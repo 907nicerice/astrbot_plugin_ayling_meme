@@ -1,6 +1,9 @@
 # astrbot_plugin_meme_online
 
-`astrbot_plugin_meme_online` 是一个用于托管 AstrBot 表情包插件代码的仓库。
+支持 LLM 多标签语义选择表情包，而不是传统关键词触发。
+
+让角色扮演 Bot 通过 `<meme:shy,tease>` 输出多标签表情意图，插件自动匹配图床表情包并发送。
+适用于陪伴、人格化、QQ 拟真聊天场景。
 
 本仓库内实际插件目录为：
 
@@ -8,13 +11,13 @@
 astrbot_plugin_ayling_meme/
 ```
 
-插件功能很简单：
+## 核心卖点
 
-- 让 LLM 在回复中输出 `<meme:tag1,tag2>` 这类标记
-- AstrBot 在发送前拦截最终消息
-- 自动移除文本中的所有 `<meme:...>` 标记
-- 根据第一个标记里的标签，从 `meme_data.json` 里挑选一张 URL 表情图
-- 将图片追加到消息链末尾发送
+- 支持 LLM 输出多标签语义标记，而不是死板的单关键词触发
+- 表情意图和回复文本解耦，适合角色扮演和人格化对话
+- 使用外部图床 URL 发送表情包，不依赖本地图库
+- 发送前自动清理 `<meme:...>` 标记，用户不会看到控制标签
+- 轻量、无数据库、无 Redis，适合低内存服务器部署
 
 例如：
 
@@ -25,7 +28,7 @@ astrbot_plugin_ayling_meme/
 最终会发送：
 
 - 文本：`才没有等你消息…`
-- 图片：一张匹配 `shy`、`tease` 标签的表情包
+- 图片：一张语义上更接近 `shy + tease` 的表情包
 
 ## 仓库结构
 
@@ -87,6 +90,7 @@ AstrBot/data/plugins/astrbot_plugin_ayling_meme/
 
 ```text
 当语气适合发送表情包时，在回复结尾附加一个表情标记，格式为 <meme:tag1,tag2>。
+请根据角色当前情绪、语气、关系感和互动氛围选择多个标签，而不是只用一个关键词。
 例如：
 才没有等你消息…<meme:shy,tease>
 我只是有点困了。<meme:sleepy,care>
