@@ -3,7 +3,7 @@ display_name: Ayling Meme
 author: ayling
 desc: 基于 <meme:...> 标记的极简 URL 表情包发送插件
 version: 1.0.0
-repo: https://github.com/907nicerice/astrbot_plugin_meme_online
+repo: https://github.com/907nicerice/astrbot_plugin_ayling_meme
 astrbot_version: ">=4.16,<5"
 support_platforms:
   - aiocqhttp
